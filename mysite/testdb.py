@@ -30,5 +30,14 @@ def getdb(request):
     response = response1
     return HttpResponse("<p>" + response + "</p>")
 
-
+def updatedb(request):
+    # 更新指定数据方式1:
+    test1 = Test.objects.get(id=1)
+    test1.name = 'new elem'
+    test1.save()
+    # 更新指定数据方式2:
+    # Test.objects.filter(id=1).update(name='new elem')
+    # 更新所有列
+    # Test.objects.all().update(name='new elem')
+    return HttpResponse("<p>修改成功！</p>")
 
