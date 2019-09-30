@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'^hello/$', view.hello),
     url(r'^insertdb/$', testdb.insertdb),
     url(r'^getdb/$', testdb.getdb),
+    url(r'^updatedb/$', testdb.updatedb),
 ]
 
