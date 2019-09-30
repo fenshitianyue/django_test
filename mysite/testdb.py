@@ -41,3 +41,13 @@ def updatedb(request):
     # Test.objects.all().update(name='new elem')
     return HttpResponse("<p>修改成功！</p>")
 
+def deletedb(request):
+    # 删除指定数据方式1:
+    test1 = Test.objects.get(id=1)
+    test1.delete()
+    # 删除指定数据方式2:
+    # Test.objects.filter(id=1).delete()
+    # 删除所有数据
+    # Test.objects.all().delete()
+    return HttpResponse("<p>删除成功！</p>")
+
