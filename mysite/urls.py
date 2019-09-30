@@ -23,6 +23,7 @@ from . import testdb
 # ]
 urlpatterns = [
     url(r'^hello/$', view.hello),
-    url(r'^testdb/$', testdb.testdb),
+    url(r'^insertdb/$', testdb.insertdb),
+    url(r'^getdb/$', testdb.getdb),
 ]
 
