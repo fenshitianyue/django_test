@@ -12,6 +12,6 @@ sys.setdefaultencoding('utf-8')
 def search_post(request):
     ctx = {}
     ctx.update(csrf(request))
-    if request.POST:
+    if request.method == "POST":  # 不建议使用 if request.POST: 来判断是否使用POST方法
         ctx['rlt'] = request.POST['q']
     return render(request, "post.html", ctx)
