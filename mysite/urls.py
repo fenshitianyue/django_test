@@ -17,6 +17,7 @@ from django.conf.urls import url
 from . import view
 from . import testdb
 from . import search
+from . import search2
 # from django.contrib import admin
 #
 # urlpatterns = [
@@ -30,5 +31,6 @@ urlpatterns = [
     url(r'^deletedb/$', testdb.deletedb),
     url(r'^search/$', search.search),
     url(r'^search_form/$', search.search_form),
+    url(r'^search_post/$', search2.search_post),
 ]
 
