@@ -4,8 +4,11 @@ from django.http import HttpResponse
 from TestModel.models import Test
 
 def insertdb(request):
-    test1 = Test(name='firsr data')
-    test1.save()
+    # 第一种插入方法:
+    # test1 = Test(name='firsr data')
+    # test1.save()
+    # 第二种插入方法:
+    Test.objects.create(name='second data')
     return HttpResponse("<p>数据添加成功！</p>")
 
 def getdb(request):
@@ -32,11 +35,11 @@ def getdb(request):
 
 def updatedb(request):
     # 更新指定数据方式1:
-    test1 = Test.objects.get(id=1)
-    test1.name = 'new elem'
-    test1.save()
+    # test1 = Test.objects.get(id=1)
+    # test1.name = 'new elem'
+    # test1.save()
     # 更新指定数据方式2:
-    # Test.objects.filter(id=1).update(name='new elem')
+    Test.objects.filter(name='firsr data').update(name='first data')
     # 更新所有列
     # Test.objects.all().update(name='new elem')
     return HttpResponse("<p>修改成功！</p>")
